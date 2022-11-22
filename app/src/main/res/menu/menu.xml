@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <item-->
+<!--        android:title="@string/menu"-->
+<!--        android:id="@+id/menu_bar"-->
+<!--        android:icon="@drawable/ic_toolbar_menu"-->
+<!--        app:showAsAction="always"/>-->
+
+    <item
+        android:title="Search"
+        android:id="@+id/search_bar"
+        android:icon="@drawable/ic_toolbar_search"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:title="Directions"
+        android:id="@+id/direction_bar"
+        android:icon="@drawable/ic_toolbar_directions"
+        app:showAsAction="always"/>
+
+</menu>

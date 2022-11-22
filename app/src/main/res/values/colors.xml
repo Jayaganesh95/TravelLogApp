@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="button">#FF7B90DA</color>
+    <color name="dot_icon">#FFCD2A00</color>
+    <color name="dot_icon2">#FF416FE4</color>
+
+    <color name="navigation_drawer">#FF3D3232</color>
+    <color name="navigation_drawer_light">#FFA5A4CB</color>
+    <color name="bg_main">#FF463C3C</color>
+    <color name="action_bar">#FF3D3131</color>
+    <color name="dot">#FFCD2A00</color>
+
+
+
+
+</resources>

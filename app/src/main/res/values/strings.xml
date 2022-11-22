@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Travel Log</string>
+
+
+
+<!--home fragment    -->
+    <string name="update_details">UPDATE DETAILS</string>
+    <string name="name">Name</string>
+    <string name="location">Location</string>
+    <string name="remarks">Remarks</string>
+    <string name="attachments">Attachments*</string>
+
+<!--detail fragment -->
+    <string name="your_timelines">Your Timelines</string>
+
+<!--navigation drawer -->
+    <string name="welcome">Welcome to TRAVEL LOG....</string>
+    <string name="travel_log">TRAVEL LOG</string>
+    <string name="make_your_path">Mark your paths for future references</string>
+    <string name="your_places">Your Places</string>
+    <string name="about">About</string>
+    <string name="your_details">Your Details</string>
+    <string name="menu">Menu</string>
+    <string name="textInput_name">Name</string>
+
+
+</resources>
