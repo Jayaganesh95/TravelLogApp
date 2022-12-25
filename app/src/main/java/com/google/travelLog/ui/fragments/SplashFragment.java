@@ -48,7 +48,7 @@ public class SplashFragment extends Fragment {
             NavDirections action = SplashFragmentDirections.actionSplashFragmentToMapsFragment();
             navController.navigate(action);
         };
-        long splashTimeout = 3000;
+        long splashTimeout = 1500;
         handler.postDelayed(runnable, splashTimeout);
 
     }

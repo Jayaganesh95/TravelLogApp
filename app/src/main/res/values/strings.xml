@@ -2,26 +2,39 @@
     <string name="app_name">Travel Log</string>
 
 
-
-<!--home fragment    -->
+    <!--maps fragment    -->
     <string name="update_details">UPDATE DETAILS</string>
     <string name="name">Name</string>
     <string name="location">Location</string>
     <string name="remarks">Remarks</string>
     <string name="attachments">Attachments*</string>
 
-<!--detail fragment -->
+    <!--detail fragment -->
     <string name="your_timelines">Your Timelines</string>
 
-<!--navigation drawer -->
+    <!--navigation drawer -->
     <string name="welcome">Welcome to TRAVEL LOG....</string>
     <string name="travel_log">TRAVEL LOG</string>
     <string name="make_your_path">Mark your paths for future references</string>
     <string name="your_places">Your Places</string>
     <string name="about">About</string>
     <string name="your_details">Your Details</string>
-    <string name="menu">Menu</string>
     <string name="textInput_name">Name</string>
+    <string name="todo">TODO</string>
+
+    <!--    toolbar-->
+    <string name="menu">Menu</string>
+    <string name="search_toolbar_menu">Search</string>
+    <string name="directions_toolbar_menu">Directions</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="update_details_btn">UPDATE DETAILS</string>
+    <string name="log_my_location">LOG MY LOCATION</string>
+    <string name="log_my_location_btn">Log My Location</string>
+    <string name="place">Place</string>
+    <string name="latitude_timeline">latitude</string>
+    <string name="longitude_timeline">longitude</string>
+    <string name="category">category</string>
 
 
 </resources>

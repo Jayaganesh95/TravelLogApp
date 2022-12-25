@@ -9,16 +9,12 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="button">#FF7B90DA</color>
-    <color name="dot_icon">#FFCD2A00</color>
-    <color name="dot_icon2">#FF416FE4</color>
+    <color name="dot_icon_red">#FFCD2A00</color>
+    <color name="dot_icon_blue">#FF416FE4</color>
 
     <color name="navigation_drawer">#FF3D3232</color>
     <color name="navigation_drawer_light">#FFA5A4CB</color>
     <color name="bg_main">#FF463C3C</color>
     <color name="action_bar">#FF3D3131</color>
-    <color name="dot">#FFCD2A00</color>
-
-
-
-
+    <color name="timeline_card">#474242</color>
 </resources>

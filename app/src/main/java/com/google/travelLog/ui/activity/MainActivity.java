@@ -1,4 +1,4 @@
-package com.google.travelLog.ui.core;
+package com.google.travelLog.ui.activity;
 
 import android.os.Bundle;
 
@@ -40,4 +40,5 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onBackPressed();
     }
+
 }

@@ -20,16 +20,7 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_maps" >
         <action
-            android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.google.travelLog.ui.fragments.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
-        <action
-            android:id="@+id/action_detailFragment_to_timelineFragment"
+            android:id="@+id/action_mapsFragment_to_timelineFragment"
             app:destination="@id/timelineFragment" />
     </fragment>
     <fragment
