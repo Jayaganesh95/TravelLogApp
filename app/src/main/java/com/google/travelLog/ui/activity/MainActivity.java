@@ -11,7 +11,6 @@ import com.google.travellog.R;
 import com.google.travellog.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
     ActivityMainBinding binding;
     NavController navController;
 

@@ -87,6 +87,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
         toolbar = binding.toolBar;
         AppCompatActivity activity = (AppCompatActivity) getActivity();
+        assert activity != null;
         activity.setSupportActionBar(toolbar);
 
         gpsTracker = new GPSTracker(requireContext());
@@ -100,15 +101,9 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         assert mapFragment != null;
         mapFragment.getMapAsync(MapsFragment.this);
 
+        binding.btnGps.setOnClickListener(v -> getLocation());
 
-
-        binding.btnGps.setOnClickListener(v ->
-                getLocation()
-        );
-
-        binding.btnLogMyLocation.setOnClickListener(v ->
-                showDialog()
-        );
+        binding.btnLogMyLocation.setOnClickListener(v -> showDialog());
         return view;
     }
 
@@ -119,7 +114,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             latitude = gpsTracker.getLatitude();
             longitude = gpsTracker.getLongitude();
             LatLng latLng = new LatLng(latitude, longitude);
-            gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+            gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14));
             gMap.getUiSettings().setZoomControlsEnabled(true);
         }
     }
@@ -171,20 +166,16 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
                 Toast.makeText(requireContext(), "Please enter the values", Toast.LENGTH_SHORT).show();
             } else {
-                postPlaces(placeName.getText().toString(),
-                        latitude, longitude,
-                        categorySelected.id);
-
+                postPlaces(placeName.getText().toString(), latitude, longitude, categorySelected.id);
 //                Log.d(TAG, "showDialog: " + longi.getText().toString() + lati.getText().toString());
             }
         });
         ImageView closeBs = dialog.findViewById(R.id.close_btn);
         closeBs.setOnClickListener(v -> {
-          dialog.cancel();
+            dialog.cancel();
         });
         dialog.show();
     }
-
 
     private void getCategories() {
         ApiInterface apiInterface = ApiClient.getRetrofit().create(ApiInterface.class);
@@ -205,7 +196,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                 Log.d(TAG, "onFailure: " + t.getLocalizedMessage());
             }
         });
-
     }
 
     private void postPlaces(String placeName, Double lat, Double lon, String categoryId) {
@@ -222,7 +212,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                     Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<PlaceResponse> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + t.getLocalizedMessage());
@@ -244,10 +233,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
 
     public void checkPermission() {
-        if (!(ContextCompat.checkSelfPermission(getActivity(),
-                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(getActivity(),
-                        Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+        if (!(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
         } else {
             requestPermission();
         }

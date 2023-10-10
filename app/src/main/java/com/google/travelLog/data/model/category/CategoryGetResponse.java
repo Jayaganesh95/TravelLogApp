@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CategoryGetResponse implements Serializable{
+public class CategoryGetResponse implements Serializable {
 
     @SerializedName("status")
     @Expose

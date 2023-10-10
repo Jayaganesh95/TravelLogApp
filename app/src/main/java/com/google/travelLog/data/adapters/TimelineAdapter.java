@@ -19,20 +19,20 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
 
     List<PlaceGetResponse> placeResponseList = new ArrayList<>();
 
-    public void insertData( List<PlaceGetResponse> placeList){
+    public void insertData(List<PlaceGetResponse> placeList) {
         this.placeResponseList.addAll(placeList);
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.timeline_logs,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.timeline_logs, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        setUiElements(holder,placeResponseList.get(position));
+        setUiElements(holder, placeResponseList.get(position));
     }
 
     @Override
@@ -41,19 +41,20 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     }
 
 
-   private int getItemSize(){
+    private int getItemSize() {
         return placeResponseList.size();
     }
 
-    private void setUiElements(ViewHolder holder, PlaceGetResponse placeGetResponse){
+    private void setUiElements(ViewHolder holder, PlaceGetResponse placeGetResponse) {
         holder.name.setText(placeGetResponse.name);
         holder.latitude.setText(placeGetResponse.lati);
         holder.longitude.setText(placeGetResponse.longi);
         holder.category.setText(placeGetResponse.categoryId);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView name,latitude,longitude,category;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView name, latitude, longitude, category;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tv_name);

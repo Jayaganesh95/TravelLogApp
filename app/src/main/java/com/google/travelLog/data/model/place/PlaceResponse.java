@@ -20,5 +20,4 @@ public class PlaceResponse {
     public ArrayList<PlaceGetResponse> placeResponseList;
 
 
-
 }

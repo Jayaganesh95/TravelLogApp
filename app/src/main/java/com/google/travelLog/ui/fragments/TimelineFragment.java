@@ -1,5 +1,6 @@
 package com.google.travelLog.ui.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,24 +29,21 @@ import retrofit2.Response;
 
 public class TimelineFragment extends Fragment {
 
-    FragmentTimelineBinding binding;
     private static final String TAG = "TimelineFragment";
+    FragmentTimelineBinding binding;
     ArrayList<PlaceGetResponse> placeGetResponses;
     TimelineAdapter timelineAdapter;
 
     public TimelineFragment() {
-
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentTimelineBinding.inflate(inflater, container, false);
         binding.recyclerViewTimeLine.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -64,9 +62,6 @@ public class TimelineFragment extends Fragment {
                 getActivity().onBackPressed();
             }
         });
-
-
-
         return binding.getRoot();
     }
 
@@ -74,7 +69,6 @@ public class TimelineFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         getPlaces();
     }
 
@@ -82,14 +76,16 @@ public class TimelineFragment extends Fragment {
         ApiInterface apiInterface = ApiClient.getRetrofit().create(ApiInterface.class);
         Call<PlaceResponse> call = apiInterface.getPlaceResponse();
         call.enqueue(new Callback<PlaceResponse>() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onResponse(Call<PlaceResponse> call, Response<PlaceResponse> response) {
+            public void onResponse(@NonNull Call<PlaceResponse> call, @NonNull Response<PlaceResponse> response) {
+                assert response.body() != null;
                 timelineAdapter.insertData(response.body().placeResponseList);
                 timelineAdapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onFailure(Call<PlaceResponse> call, Throwable t) {
+            public void onFailure(@NonNull Call<PlaceResponse> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + t.getLocalizedMessage());
             }
         });
